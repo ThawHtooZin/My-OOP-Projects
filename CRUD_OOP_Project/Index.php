@@ -1,3 +1,6 @@
+<?php
+  include 'include/route.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -26,13 +29,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <?php
+          $queries->getUsers();
+          ?>
         </tbody>
       </table>
     </div>

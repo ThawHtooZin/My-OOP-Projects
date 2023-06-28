@@ -31,7 +31,7 @@
             <input type="hidden" name="crud" value="add">
             <p class="text-danger"></p>
             <br>
-            <button type="submit" class="btn btn-success">Add</button>
+            <button type="submit" class="btn btn-success" name="btn">Add</button>
           </form>
         </div>
       </div>

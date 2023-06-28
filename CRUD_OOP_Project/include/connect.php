@@ -1,16 +1,17 @@
 <?php
 
-define('MYSQL_USER','root');
-define('MYSQL_PASSWORD','');
-define('MYSQL_HOST','localhost');
-define('MYSQL_DATABASE', 'crud-projects-db');
+class dbconnect {
+  private $host = "localhost";
+  private $user = "root";
+  private $pass = "";
+  private $dbName = "usersdata";
 
-$options = array(
-  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-);
-
-$pdo = new PDO(
-  'mysql:host='.MYSQL_HOST.';dbname='.MYSQL_DATABASE,MYSQL_USER,MYSQL_PASSWORD,$options
-  )
+  protected function connect(){
+    $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbName;
+    $pdo = new PDO($dsn, $this->user, $this->pass);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    return $pdo;
+  }
+}
 
  ?>
